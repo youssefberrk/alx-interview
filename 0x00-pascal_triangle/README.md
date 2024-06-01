@@ -1,80 +1,99 @@
-Sure, here's a sample `README.md` file for a project titled "0x00. Pascal's Triangle":
 
 ```markdown
 # 0x00. Pascal's Triangle
 
-This project is an implementation of the Pascal's Triangle in Python. Pascal's Triangle is a triangular array of binomial coefficients, where each number is the sum of the two numbers directly above it. It has many interesting properties and applications in mathematics, computer science, and other fields.
+## Description
+
+This project involves generating Pascal's Triangle, a triangular array of binomial coefficients. Each number is the sum of the two directly above it. Pascal's Triangle has various applications in mathematics, particularly in algebra and combinatorics.
 
 ## Table of Contents
 
-- [About](#about)
-- [Getting Started](#getting-started)
+- [Introduction](#introduction)
 - [Usage](#usage)
-- [Examples](#examples)
-- [Contributing](#contributing)
-- [License](#license)
+- [Example](#example)
+- [Files](#files)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Testing](#testing)
+- [Author](#author)
 
-## About
+## Introduction
 
-The Pascal's Triangle is a triangular array of numbers that follows a specific pattern. The numbers at the edges of the triangle are always 1, and each number inside the triangle is the sum of the two numbers directly above it. The first few rows of the triangle are:
+Pascal's Triangle is a triangular array constructed as follows:
+- The top row is `[1]`.
+- Each subsequent row is formed by adding the number above and to the left with the number above and to the right, treating empty elements as `0`.
 
+For example, the first five rows of Pascal's Triangle are:
 ```
-      1
-     1 1
-    1 2 1
-   1 3 3 1
-  1 4 6 4 1
- 1 5 10 10 5 1
+     1
+    1 1
+   1 2 1
+  1 3 3 1
+ 1 4 6 4 1
 ```
-
-This project provides a Python implementation of the Pascal's Triangle, allowing you to generate the triangle up to a specified number of rows.
-
-## Getting Started
-
-To get started with this project, you'll need to have Python installed on your machine. You can download the latest version of Python from the official website: [https://www.python.org/downloads/](https://www.python.org/downloads/)
-
-Once you have Python installed, you can clone this repository or download the source code.
 
 ## Usage
 
-To use this project, simply run the `pascal_triangle.py` script with the desired number of rows as a command-line argument. For example:
+This project includes a Python module that generates Pascal's Triangle up to a specified number of rows. You can use this module in your own projects or run it as a standalone script.
 
-```
-python pascal_triangle.py 10
-```
+### Example Usage
 
-This will generate and print the Pascal's Triangle with 10 rows.
+```python
+from pascals_triangle import generate_pascals_triangle
 
-## Examples
-
-Here are a few examples of running the `pascal_triangle.py` script with different numbers of rows:
-
-```
-$ python pascal_triangle.py 5
-    1
-   1 1
-  1 2 1
- 1 3 3 1
-1 4 6 4 1
-
-$ python pascal_triangle.py 8
-        1
-       1 1
-      1 2 1
-     1 3 3 1
-    1 4 6 4 1
-   1 5 10 10 5 1
-  1 6 15 20 15 6 1
- 1 7 21 35 35 21 7 1
+# Generate the first 5 rows of Pascal's Triangle
+triangle = generate_pascals_triangle(5)
+for row in triangle:
+    print(row)
 ```
 
-## Contributing
+### Command Line Usage
 
-Contributions to this project are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.
+You can also run the script from the command line to print Pascal's Triangle:
 
-## License
+```sh
+python pascals_triangle.py 5
+```
 
-This project is licensed under the [MIT License](LICENSE).
+This will output:
+```
+[1]
+[1, 1]
+[1, 2, 1]
+[1, 3, 3, 1]
+[1, 4, 6, 4, 1]
+```
+
+## Files
+
+- `pascals_triangle.py`: Python module containing the function to generate Pascal's Triangle.
+- `README.md`: This file.
+- `tests/`: Directory containing unit tests for the module.
+
+## Requirements
+
+- Python 3.6 or higher
+
+## Installation
+
+Clone the repository to your local machine:
+
+```sh
+git clone https://github.com/youssefberrk/alx-interview.git
+cd 0x00-pascals-triangle
+```
+
+## Testing
+
+To run the tests, use the `unittest` module:
+
+```sh
+python -m unittest discover tests
+```
+
+## Author
+
 Youssef Berrakouan
-```
 
+- GitHub: [youssefberrk](https://github.com/youssefberrk)
+- Email: yberrakouan.lol@gmail.com
